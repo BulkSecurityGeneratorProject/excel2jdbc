@@ -1,0 +1,14 @@
+version: '2'
+services:
+    e2r-mariadb:
+        container_name: e2r-mariadb
+        image: mariadb:10.1.17
+        # volumes:
+        #     - ~/volumes/jhipster/e2r/mysql/:/var/lib/mysql/
+        environment:
+            - MYSQL_USER=root
+            - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+            - MYSQL_DATABASE=e2r
+        ports:
+            - 3306:3306
+        command: mysqld --lower_case_table_names=1 --skip-ssl
